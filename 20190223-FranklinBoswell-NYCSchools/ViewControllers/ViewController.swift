@@ -10,13 +10,37 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var nycHighSchools = [HighSchool]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchNYCSchoolData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     
     func fetchNYCSchoolData() {
+        guard let highSchoolDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name") else {
+            return
+        }
+        let request = URLRequest(url:highSchoolDataEndpoint)
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { [weak self] (data, response, error)  in
+            if error == nil{
+                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
+                if let highSchoolJSON = json as! [[String : Any]]? {
+                    for unit in highSchoolJSON {
+                        if let nycHighSchool = HighSchool(json: unit) {
+                            self?.nycHighSchools.append(nycHighSchool)
+                        }
+                    }
+                }
+            } else {
+                print("error: \(String(describing: error?.localizedDescription))")
+            }
+        }
+        task.resume()
         
     }
 

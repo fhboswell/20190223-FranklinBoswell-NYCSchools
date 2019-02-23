@@ -11,7 +11,7 @@ import Foundation
 struct HighSchool {
     
     let dbn: String
-    let name: String
-    let location: (latitude: Double, longitude: Double)
+    let schoolName: String
+   // let borough: String
     
 }

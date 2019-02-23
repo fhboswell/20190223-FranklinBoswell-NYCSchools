@@ -14,6 +14,8 @@
 		9447E7A62221CF79008E9C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */; };
 		9447E7B12221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7B02221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift */; };
 		9447E7BC2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */; };
+		9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CC2221F090008E9C11 /* HighSchool.swift */; };
+		9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9447E7B72221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchoolsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0190223_FranklinBoswell_NYCSchoolsUITests.swift; sourceTree = "<group>"; };
 		9447E7BD2221CF79008E9C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9447E7CC2221F090008E9C11 /* HighSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool.swift; sourceTree = "<group>"; };
+		9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +101,11 @@
 		9447E79A2221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools */ = {
 			isa = PBXGroup;
 			children = (
-				9447E79B2221CF78008E9C11 /* AppDelegate.swift */,
-				9447E79D2221CF78008E9C11 /* ViewController.swift */,
-				9447E79F2221CF78008E9C11 /* Main.storyboard */,
-				9447E7A22221CF79008E9C11 /* Assets.xcassets */,
-				9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */,
 				9447E7A72221CF79008E9C11 /* Info.plist */,
+				9447E7CE2222001B008E9C11 /* Extensions */,
+				9447E7CB2221EFBA008E9C11 /* Models */,
+				9447E7CA2221DD37008E9C11 /* ViewControllers */,
+				9447E7C92221DD11008E9C11 /* SupportingFiles */,
 			);
 			path = "20190223-FranklinBoswell-NYCSchools";
 			sourceTree = "<group>";
@@ -123,6 +126,41 @@
 				9447E7BD2221CF79008E9C11 /* Info.plist */,
 			);
 			path = "20190223-FranklinBoswell-NYCSchoolsUITests";
+			sourceTree = "<group>";
+		};
+		9447E7C92221DD11008E9C11 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9447E79B2221CF78008E9C11 /* AppDelegate.swift */,
+				9447E79F2221CF78008E9C11 /* Main.storyboard */,
+				9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */,
+				9447E7A22221CF79008E9C11 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9447E7CA2221DD37008E9C11 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9447E79D2221CF78008E9C11 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9447E7CB2221EFBA008E9C11 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9447E7CC2221F090008E9C11 /* HighSchool.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9447E7CE2222001B008E9C11 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +295,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */,
+				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
+				9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN7HR27RDT;
 				INFOPLIST_FILE = "20190223-FranklinBoswell-NYCSchools/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NN7HR27RDT;
 				INFOPLIST_FILE = "20190223-FranklinBoswell-NYCSchools/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
