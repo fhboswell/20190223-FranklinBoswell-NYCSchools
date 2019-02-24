@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9447E7A72221CF79008E9C11 /* Info.plist */,
+				9447E7D722224505008E9C11 /* CustomTableViewCells */,
 				9447E7CE2222001B008E9C11 /* Extensions */,
 				9447E7CB2221EFBA008E9C11 /* Models */,
 				9447E7CA2221DD37008E9C11 /* ViewControllers */,
@@ -167,6 +168,13 @@
 				9447E7D32222165B008E9C11 /* SATScoresExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9447E7D722224505008E9C11 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
