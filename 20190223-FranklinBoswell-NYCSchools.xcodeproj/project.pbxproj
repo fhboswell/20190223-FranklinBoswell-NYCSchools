@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79B2221CF78008E9C11 /* AppDelegate.swift */; };
-		9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* ViewController.swift */; };
+		9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* RootViewController.swift */; };
 		9447E7A12221CF78008E9C11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E79F2221CF78008E9C11 /* Main.storyboard */; };
 		9447E7A32221CF79008E9C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A22221CF79008E9C11 /* Assets.xcassets */; };
 		9447E7A62221CF79008E9C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,7 @@
 		9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */; };
 		9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D122221374008E9C11 /* SATScoreData.swift */; };
 		9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D32222165B008E9C11 /* SATScoresExtension.swift */; };
+		948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		9447E7982221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447E79B2221CF78008E9C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9447E79D2221CF78008E9C11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9447E79D2221CF78008E9C11 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9447E7A02221CF78008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9447E7A22221CF79008E9C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9447E7A52221CF79008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolExtension.swift; sourceTree = "<group>"; };
 		9447E7D122221374008E9C11 /* SATScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreData.swift; sourceTree = "<group>"; };
 		9447E7D32222165B008E9C11 /* SATScoresExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresExtension.swift; sourceTree = "<group>"; };
+		948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9447E7A72221CF79008E9C11 /* Info.plist */,
+				9447E7D722224505008E9C11 /* CustomTableViewCells */,
 				9447E7CE2222001B008E9C11 /* Extensions */,
 				9447E7CB2221EFBA008E9C11 /* Models */,
 				9447E7CA2221DD37008E9C11 /* ViewControllers */,
@@ -146,7 +149,7 @@
 		9447E7CA2221DD37008E9C11 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9447E79D2221CF78008E9C11 /* ViewController.swift */,
+				9447E79D2221CF78008E9C11 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +170,14 @@
 				9447E7D32222165B008E9C11 /* SATScoresExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9447E7D722224505008E9C11 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */,
+			);
+			path = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,7 +311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */,
+				948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */,
+				9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */,
 				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
 				9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */,

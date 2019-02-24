@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     var nycHighSchools = [HighSchool]()
     var nycSATScores = [SATScoreData]()
+    
     
     var highSchoolDataURLString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports"
     var satScoreDataURLString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
@@ -38,10 +39,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath) as! HighSchoolTableViewCell
         
-        cell.textLabel?.text = nycHighSchools[indexPath.row].schoolName
+        cell.highSchoolTitleLabel.text = nycHighSchools[indexPath.row].schoolName
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     //MARK: - Data
