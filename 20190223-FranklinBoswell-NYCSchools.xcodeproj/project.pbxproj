@@ -16,6 +16,8 @@
 		9447E7BC2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */; };
 		9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CC2221F090008E9C11 /* HighSchool.swift */; };
 		9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */; };
+		9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D122221374008E9C11 /* SATScoreData.swift */; };
+		9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D32222165B008E9C11 /* SATScoresExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		9447E7BD2221CF79008E9C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9447E7CC2221F090008E9C11 /* HighSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool.swift; sourceTree = "<group>"; };
 		9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolExtension.swift; sourceTree = "<group>"; };
+		9447E7D122221374008E9C11 /* SATScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreData.swift; sourceTree = "<group>"; };
+		9447E7D32222165B008E9C11 /* SATScoresExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				9447E7CC2221F090008E9C11 /* HighSchool.swift */,
+				9447E7D122221374008E9C11 /* SATScoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */,
+				9447E7D32222165B008E9C11 /* SATScoresExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,6 +303,8 @@
 				9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */,
 				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
+				9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */,
+				9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */,
 				9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

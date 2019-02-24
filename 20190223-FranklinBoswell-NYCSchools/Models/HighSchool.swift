@@ -8,10 +8,13 @@
 
 import Foundation
 
-struct HighSchool {
+
+
+struct HighSchool{
     
     let dbn: String
     let schoolName: String
+   // let score: Int?
    // let borough: String
     
 }
