@@ -38,10 +38,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath) as! HighSchoolTableViewCell
         
-        cell.textLabel?.text = nycHighSchools[indexPath.row].schoolName
+        cell.highSchoolTitleLabel.text = nycHighSchools[indexPath.row].schoolName
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     //MARK: - Data
