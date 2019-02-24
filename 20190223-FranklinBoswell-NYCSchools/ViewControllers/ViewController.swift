@@ -14,31 +14,19 @@ class ViewController: UIViewController {
     var nycHighSchools = [HighSchool]()
     var nycSATScores = [SATScoreData]()
     
+    var highSchoolDataURLString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports"
+    var satScoreDataURLString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getNYCHighSchoolData()
+        
+        getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
+        getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     
-    /*
- guard let dbn = json["dbn"] as? String,
- let schoolName = json["school_name"] as? String,
- let overviewParagraph = json["overview_paragraph"] as? String,
- let neighborhood = json["neighborhood"] as? String,
- let location = json["location"] as? String,
- let phoneNumber = json["phone_number"] as? String,
- let schoolEmail = json["school_email"] as? String,
- let website = json["website"] as? String,
- let schoolSports = json["school_sports"] as? String
- else {
- return nil
- }
- */
- 
-    /// gets HighSchool Data
-    func getNYCHighSchoolData() {
-        guard let highSchoolDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports") else {
+    func getDataFromAPI(urlString: String, processingClosure: @escaping (_: [String: Any]) -> ()) {
+        guard let highSchoolDataEndpoint = URL(string: urlString) else {
             return
         }
         let request = URLRequest(url:highSchoolDataEndpoint)
@@ -46,11 +34,9 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: request) { [weak self] (data, response, error)  in
             if error == nil{
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                if let highSchoolJSON = json as! [[String : Any]]? {
-                    for unit in highSchoolJSON {
-                        if let nycHighSchool = HighSchool(json: unit) {
-                            self?.nycHighSchools.append(nycHighSchool)
-                        }
+                if let jsonAsArrayOfDictonarys = json as! [[String : Any]]? {
+                    for jsonUnit in jsonAsArrayOfDictonarys {
+                        processingClosure(jsonUnit)
                     }
                 }
             } else {
@@ -60,31 +46,18 @@ class ViewController: UIViewController {
         task.resume()
         
     }
-    /// gets SAT data
-    func getNYCSATScoreData() {
-        guard let satScoreDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/f9bf-2cp4.json") else {
-            return
+    func processSATScoreData(unit: [String: Any]){
+        if let nycSATScore = SATScoreData(json: unit) {
+            nycSATScores.append(nycSATScore)
         }
-        
-        let request = URLRequest(url:satScoreDataEndpoint)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { [weak self] (data, response, error)  in
-            if error == nil{
-                let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                if let satScoreJSON = json as! [[String : Any]]? {
-                    for unit in satScoreJSON {
-                        if let nycSATScore = SATScoreData(json: unit) {
-                            self?.nycSATScores.append(nycSATScore)
-                        }
-                    }
-                }
-            } else {
-                print("error: \(String(describing: error?.localizedDescription))")
-            }
-        }
-        task.resume()
-        
     }
+    func processHighSchoolData(unit: [String: Any]){
+        if let nycHighSchool = HighSchool(json: unit) {
+            nycHighSchools.append(nycHighSchool)
+        }
+    }
+    
+ 
 
 }
 
