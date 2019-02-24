@@ -45,8 +45,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if isFiltering() {
-            return filteredHighSchools
-                .count
+            return filteredHighSchools.count
         }
         
         return nycHighSchools.count
@@ -54,8 +53,14 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath) as! HighSchoolTableViewCell
+        var nycHighSchoolFromAppropriateDataStore: HighSchool!
+        if isFiltering() {
+            nycHighSchoolFromAppropriateDataStore = filteredHighSchools[indexPath.row]
+        }else{
+            nycHighSchoolFromAppropriateDataStore = nycHighSchools[indexPath.row]
+        }
         
-        cell.highSchoolTitleLabel.text = nycHighSchools[indexPath.row].schoolName
+        cell.highSchoolTitleLabel.text = nycHighSchoolFromAppropriateDataStore.schoolName
         return cell
     }
     
