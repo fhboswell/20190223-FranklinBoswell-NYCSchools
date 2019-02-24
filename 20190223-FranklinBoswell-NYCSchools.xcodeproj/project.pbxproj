@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79B2221CF78008E9C11 /* AppDelegate.swift */; };
-		9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* ViewController.swift */; };
+		9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* RootViewController.swift */; };
 		9447E7A12221CF78008E9C11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E79F2221CF78008E9C11 /* Main.storyboard */; };
 		9447E7A32221CF79008E9C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A22221CF79008E9C11 /* Assets.xcassets */; };
 		9447E7A62221CF79008E9C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		9447E7982221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447E79B2221CF78008E9C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9447E79D2221CF78008E9C11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9447E79D2221CF78008E9C11 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		9447E7A02221CF78008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9447E7A22221CF79008E9C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9447E7A52221CF79008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 		9447E7CA2221DD37008E9C11 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9447E79D2221CF78008E9C11 /* ViewController.swift */,
+				9447E79D2221CF78008E9C11 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */,
-				9447E79E2221CF78008E9C11 /* ViewController.swift in Sources */,
+				9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */,
 				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
 				9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */,

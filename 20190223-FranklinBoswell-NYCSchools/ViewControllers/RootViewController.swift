@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     var nycHighSchools = [HighSchool]()
     var nycSATScores = [SATScoreData]()
+    
     
     var highSchoolDataURLString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports"
     var satScoreDataURLString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
