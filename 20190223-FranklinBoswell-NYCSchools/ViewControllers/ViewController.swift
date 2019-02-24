@@ -12,16 +12,21 @@ class ViewController: UIViewController {
 
     
     var nycHighSchools = [HighSchool]()
+    var nycSATScores = [SATScoreData]()
+    
+    var highSchoolDataURLString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports"
+    var satScoreDataURLString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchNYCSchoolData()
+        
+        getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
+        getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
         // Do any additional setup after loading the view, typically from a nib.
     }
-
     
-    func fetchNYCSchoolData() {
-        guard let highSchoolDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name") else {
+    func getDataFromAPI(urlString: String, processingClosure: @escaping (_: [String: Any]) -> ()) {
+        guard let highSchoolDataEndpoint = URL(string: urlString) else {
             return
         }
         let request = URLRequest(url:highSchoolDataEndpoint)
@@ -29,11 +34,9 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: request) { [weak self] (data, response, error)  in
             if error == nil{
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                if let highSchoolJSON = json as! [[String : Any]]? {
-                    for unit in highSchoolJSON {
-                        if let nycHighSchool = HighSchool(json: unit) {
-                            self?.nycHighSchools.append(nycHighSchool)
-                        }
+                if let jsonAsArrayOfDictonarys = json as! [[String : Any]]? {
+                    for jsonUnit in jsonAsArrayOfDictonarys {
+                        processingClosure(jsonUnit)
                     }
                 }
             } else {
@@ -43,6 +46,18 @@ class ViewController: UIViewController {
         task.resume()
         
     }
+    func processSATScoreData(unit: [String: Any]){
+        if let nycSATScore = SATScoreData(json: unit) {
+            nycSATScores.append(nycSATScore)
+        }
+    }
+    func processHighSchoolData(unit: [String: Any]){
+        if let nycHighSchool = HighSchool(json: unit) {
+            nycHighSchools.append(nycHighSchool)
+        }
+    }
+    
+ 
 
 }
 
