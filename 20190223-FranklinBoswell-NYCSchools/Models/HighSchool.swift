@@ -12,9 +12,15 @@ import Foundation
 
 struct HighSchool{
     
-    let dbn: String
-    let schoolName: String
-   // let score: Int?
-   // let borough: String
+    let dbn: String?
+    let schoolName: String?
+    let overviewParagraph: String?
+    let neighborhood: String?
+    let location: String?
+    let phoneNumber: String?
+    let schoolEmail: String?
+    let website: String?
+    let schoolSports: String?
+    
     
 }

@@ -16,13 +16,29 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchNYCSATScoreData()
+        getNYCHighSchoolData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    
+    /*
+ guard let dbn = json["dbn"] as? String,
+ let schoolName = json["school_name"] as? String,
+ let overviewParagraph = json["overview_paragraph"] as? String,
+ let neighborhood = json["neighborhood"] as? String,
+ let location = json["location"] as? String,
+ let phoneNumber = json["phone_number"] as? String,
+ let schoolEmail = json["school_email"] as? String,
+ let website = json["website"] as? String,
+ let schoolSports = json["school_sports"] as? String
+ else {
+ return nil
+ }
+ */
+ 
     /// gets HighSchool Data
-    func fetchNYCHighSchoolData() {
-        guard let highSchoolDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name") else {
+    func getNYCHighSchoolData() {
+        guard let highSchoolDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports") else {
             return
         }
         let request = URLRequest(url:highSchoolDataEndpoint)
@@ -45,7 +61,7 @@ class ViewController: UIViewController {
         
     }
     /// gets SAT data
-    func fetchNYCSATScoreData() {
+    func getNYCSATScoreData() {
         guard let satScoreDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/f9bf-2cp4.json") else {
             return
         }
