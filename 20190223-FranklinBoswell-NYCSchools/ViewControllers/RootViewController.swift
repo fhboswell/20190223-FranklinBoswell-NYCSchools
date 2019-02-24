@@ -13,6 +13,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: - Properties
     var nycHighSchools = [HighSchool]()
     var nycSATScores = [SATScoreData]()
+    var filteredHighSchools = [HighSchool]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     
     var highSchoolDataURLString = "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name,overview_paragraph,neighborhood,location,phone_number,school_email,website,school_sports"
@@ -25,23 +28,39 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
-        getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
-        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search High Schools"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         
         highSchoolTableview.delegate = self
         highSchoolTableview.dataSource = self
+        
+        getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
+        getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
     }
     
     //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if isFiltering() {
+            return filteredHighSchools.count
+        }
+        
         return nycHighSchools.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath) as! HighSchoolTableViewCell
+        var nycHighSchoolFromAppropriateDataStore: HighSchool!
+        if isFiltering() {
+            nycHighSchoolFromAppropriateDataStore = filteredHighSchools[indexPath.row]
+        }else{
+            nycHighSchoolFromAppropriateDataStore = nycHighSchools[indexPath.row]
+        }
         
-        cell.highSchoolTitleLabel.text = nycHighSchools[indexPath.row].schoolName
+        cell.highSchoolTitleLabel.text = nycHighSchoolFromAppropriateDataStore.schoolName
         return cell
     }
     
