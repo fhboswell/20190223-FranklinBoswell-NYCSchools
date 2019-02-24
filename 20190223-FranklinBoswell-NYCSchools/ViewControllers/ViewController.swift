@@ -12,10 +12,11 @@ class ViewController: UIViewController {
 
     
     var nycHighSchools = [HighSchool]()
+    var nycSATScores = [SATScoreData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchNYCHighSchoolData()
+        fetchNYCSATScoreData()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -45,7 +46,7 @@ class ViewController: UIViewController {
     }
     /// gets SAT data
     func fetchNYCSATScoreData() {
-        guard let satScoreDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/s3k6-pzi2.json?$select=dbn,school_name") else {
+        guard let satScoreDataEndpoint = URL(string: "https://data.cityofnewyork.us/resource/f9bf-2cp4.json") else {
             return
         }
         
@@ -54,10 +55,10 @@ class ViewController: UIViewController {
         let task = session.dataTask(with: request) { [weak self] (data, response, error)  in
             if error == nil{
                 let json = try? JSONSerialization.jsonObject(with: data!, options: [])
-                if let highSchoolJSON = json as! [[String : Any]]? {
-                    for unit in highSchoolJSON {
-                        if let nycHighSchool = HighSchool(json: unit) {
-                            self?.nycHighSchools.append(nycHighSchool)
+                if let satScoreJSON = json as! [[String : Any]]? {
+                    for unit in satScoreJSON {
+                        if let nycSATScore = SATScoreData(json: unit) {
+                            self?.nycSATScores.append(nycSATScore)
                         }
                     }
                 }

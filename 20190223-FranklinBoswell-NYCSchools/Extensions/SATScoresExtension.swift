@@ -24,6 +24,6 @@ extension SATScoreData {
         self.satMathAvgScore = satMathAvgScore
         self.satWritingAvgScore = satWritingAvgScore
 
-        print(json)
+        print(self)
     }
 }
