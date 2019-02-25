@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94124F5922233B310084526E /* SATScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F5822233B310084526E /* SATScoreViewController.swift */; };
+		94124F5B222378140084526E /* SATScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F5A222378140084526E /* SATScoreTableViewCell.swift */; };
 		9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79B2221CF78008E9C11 /* AppDelegate.swift */; };
-		9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* RootViewController.swift */; };
+		9447E79E2221CF78008E9C11 /* HighSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* HighSchoolViewController.swift */; };
 		9447E7A12221CF78008E9C11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E79F2221CF78008E9C11 /* Main.storyboard */; };
 		9447E7A32221CF79008E9C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A22221CF79008E9C11 /* Assets.xcassets */; };
 		9447E7A62221CF79008E9C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */; };
@@ -19,7 +21,7 @@
 		9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D122221374008E9C11 /* SATScoreData.swift */; };
 		9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D32222165B008E9C11 /* SATScoresExtension.swift */; };
 		948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */; };
-		948F548122225964008C49F8 /* RootViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F548022225964008C49F8 /* RootViewControllerExtension.swift */; };
+		948F548122225964008C49F8 /* HighSchoolViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948F548022225964008C49F8 /* HighSchoolViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94124F5822233B310084526E /* SATScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreViewController.swift; sourceTree = "<group>"; };
+		94124F5A222378140084526E /* SATScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreTableViewCell.swift; sourceTree = "<group>"; };
 		9447E7982221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447E79B2221CF78008E9C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9447E79D2221CF78008E9C11 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		9447E79D2221CF78008E9C11 /* HighSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolViewController.swift; sourceTree = "<group>"; };
 		9447E7A02221CF78008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9447E7A22221CF79008E9C11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9447E7A52221CF79008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +62,7 @@
 		9447E7D122221374008E9C11 /* SATScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreData.swift; sourceTree = "<group>"; };
 		9447E7D32222165B008E9C11 /* SATScoresExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoresExtension.swift; sourceTree = "<group>"; };
 		948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolTableViewCell.swift; sourceTree = "<group>"; };
-		948F548022225964008C49F8 /* RootViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewControllerExtension.swift; sourceTree = "<group>"; };
+		948F548022225964008C49F8 /* HighSchoolViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +155,8 @@
 		9447E7CA2221DD37008E9C11 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9447E79D2221CF78008E9C11 /* RootViewController.swift */,
+				9447E79D2221CF78008E9C11 /* HighSchoolViewController.swift */,
+				94124F5822233B310084526E /* SATScoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -170,7 +175,7 @@
 			children = (
 				9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */,
 				9447E7D32222165B008E9C11 /* SATScoresExtension.swift */,
-				948F548022225964008C49F8 /* RootViewControllerExtension.swift */,
+				948F548022225964008C49F8 /* HighSchoolViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				948F547E22224BF7008C49F8 /* HighSchoolTableViewCell.swift */,
+				94124F5A222378140084526E /* SATScoreTableViewCell.swift */,
 			);
 			path = CustomTableViewCells;
 			sourceTree = "<group>";
@@ -315,11 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */,
-				9447E79E2221CF78008E9C11 /* RootViewController.swift in Sources */,
+				9447E79E2221CF78008E9C11 /* HighSchoolViewController.swift in Sources */,
 				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
+				94124F5B222378140084526E /* SATScoreTableViewCell.swift in Sources */,
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
-				948F548122225964008C49F8 /* RootViewControllerExtension.swift in Sources */,
+				948F548122225964008C49F8 /* HighSchoolViewControllerExtension.swift in Sources */,
 				9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */,
+				94124F5922233B310084526E /* SATScoreViewController.swift in Sources */,
 				9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */,
 				9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */,
 			);

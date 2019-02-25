@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--High School View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HighSchoolViewController" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VEA-ZF-8gD">
-                                                    <rect key="frame" x="10" y="10" width="335" height="96.5"/>
+                                                    <rect key="frame" x="10" y="10" width="335" height="97"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-rl-9zw">
                                                             <rect key="frame" x="5" y="5" width="325" height="10"/>
@@ -77,12 +77,108 @@
                     </view>
                     <navigationItem key="navigationItem" id="v6U-au-7kv"/>
                     <connections>
-                        <outlet property="highSchoolTableview" destination="deF-KX-7O5" id="Rl5-7h-OXH"/>
+                        <outlet property="highSchoolTableView" destination="deF-KX-7O5" id="v2v-Db-GcY"/>
+                        <segue destination="JPi-fq-204" kind="show" identifier="SATScoreSeuge" id="0cM-5c-9Yy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="BF3-uX-40y">
+            <objects>
+                <viewController id="JPi-fq-204" customClass="SATScoreViewController" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="87i-xf-Ptd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7yQ-0l-usW">
+                                <rect key="frame" x="10" y="74" width="355" height="583"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="220" id="oyg-FB-9Y8" customClass="SAT">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="220"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oyg-FB-9Y8" id="nFw-zT-tTs" customClass="HighSchoolTableViewCell" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="219.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCN-TP-sZi">
+                                                    <rect key="frame" x="10" y="10" width="335" height="199.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="chy-cO-ARe">
+                                                            <rect key="frame" x="10" y="10" width="315" height="179.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-lf-g00" userLabel="School Name">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6X-lI-cWR" userLabel="School Name">
+                                                                    <rect key="frame" x="0.0" y="20.5" width="315" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ae-BC-J8n" userLabel="School Name">
+                                                                    <rect key="frame" x="0.0" y="41" width="315" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzC-HI-Vj1" userLabel="School Name">
+                                                                    <rect key="frame" x="0.0" y="61.5" width="315" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="School Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWf-zL-XJk" userLabel="School Name">
+                                                                    <rect key="frame" x="0.0" y="82" width="315" height="97.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="chy-cO-ARe" firstAttribute="top" secondItem="aCN-TP-sZi" secondAttribute="top" constant="10" id="7xs-eF-BiU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="chy-cO-ARe" secondAttribute="bottom" constant="10" id="HSI-fI-eBF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="chy-cO-ARe" secondAttribute="trailing" constant="10" id="Rjx-IW-Ztj"/>
+                                                        <constraint firstItem="chy-cO-ARe" firstAttribute="leading" secondItem="aCN-TP-sZi" secondAttribute="leading" constant="10" id="Sm8-0y-LMK"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="aCN-TP-sZi" secondAttribute="trailing" constant="10" id="CmW-Q4-FGd"/>
+                                                <constraint firstAttribute="bottom" secondItem="aCN-TP-sZi" secondAttribute="bottom" constant="10" id="SoO-YS-1Nu"/>
+                                                <constraint firstItem="aCN-TP-sZi" firstAttribute="top" secondItem="nFw-zT-tTs" secondAttribute="top" constant="10" id="VhV-Hw-7oY"/>
+                                                <constraint firstItem="aCN-TP-sZi" firstAttribute="leading" secondItem="nFw-zT-tTs" secondAttribute="leading" constant="10" id="ucv-oG-Riz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7yQ-0l-usW" firstAttribute="leading" secondItem="QDw-ST-OB3" secondAttribute="leading" constant="10" id="0iK-29-mx0"/>
+                            <constraint firstItem="QDw-ST-OB3" firstAttribute="bottom" secondItem="7yQ-0l-usW" secondAttribute="bottom" constant="10" id="1Vx-WX-Huj"/>
+                            <constraint firstItem="QDw-ST-OB3" firstAttribute="trailing" secondItem="7yQ-0l-usW" secondAttribute="trailing" constant="10" id="Uci-gS-jTa"/>
+                            <constraint firstItem="7yQ-0l-usW" firstAttribute="top" secondItem="QDw-ST-OB3" secondAttribute="top" constant="10" id="lXm-hV-MjL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QDw-ST-OB3"/>
+                    </view>
+                    <connections>
+                        <outlet property="satScoreTableView" destination="7yQ-0l-usW" id="7iu-l8-qeG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNG-qb-Kr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2048.8000000000002" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gPR-nQ-3CA">

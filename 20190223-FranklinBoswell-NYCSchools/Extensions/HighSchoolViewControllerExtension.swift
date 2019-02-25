@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension RootViewController: UISearchResultsUpdating {
+extension HighSchoolViewController: UISearchResultsUpdating {
     
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
@@ -25,7 +25,7 @@ extension RootViewController: UISearchResultsUpdating {
             return (nycHighSchool.schoolName?.lowercased().contains(searchText.lowercased()))!
         })
         
-        highSchoolTableview.reloadData()
+        highSchoolTableView.reloadData()
     }
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
