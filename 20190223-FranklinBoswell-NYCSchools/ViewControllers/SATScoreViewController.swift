@@ -23,8 +23,6 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(nycHighSchool)
-        print(nycSATScore)
         satScoreTableView.delegate = self
         satScoreTableView.dataSource = self
     }
@@ -45,6 +43,14 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
         }
        return UITableViewCell()
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 276
+        }else {
+            return UITableView.automaticDimension
+        }
     }
 }
 

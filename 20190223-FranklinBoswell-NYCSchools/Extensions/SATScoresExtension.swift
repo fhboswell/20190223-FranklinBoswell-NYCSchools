@@ -13,8 +13,8 @@ extension SATScoreData {
         guard let dbn = json["dbn"] as? String,
             let numOfSatTestTakers = json["num_of_sat_test_takers"] as? String,
             let satCriticalReadingAvgScore = json["sat_critical_reading_avg_score"] as? String,
-            let satMathAvgScore = json["sat_critical_reading_avg_score"] as? String,
-            let satWritingAvgScore = json["sat_critical_reading_avg_score"] as? String else {
+            let satMathAvgScore = json["sat_math_avg_score"] as? String,
+            let satWritingAvgScore = json["sat_writing_avg_score"] as? String else {
                 return nil
         }
         
