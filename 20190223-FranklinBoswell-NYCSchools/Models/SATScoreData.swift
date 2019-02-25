@@ -9,11 +9,9 @@
 import Foundation
 
 struct SATScoreData{
-    
     let dbn: String?
     let numOfSatTestTakers: String?
     let satCriticalReadingAvgScore: String?
     let satMathAvgScore: String?
     let satWritingAvgScore: String?
-    
 }

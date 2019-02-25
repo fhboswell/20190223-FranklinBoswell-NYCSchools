@@ -218,6 +218,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="SXW-kS-iZw" firstAttribute="leading" secondItem="nFw-zT-tTs" secondAttribute="leading" constant="10" id="VyP-5O-GLB"/>
                                                 <constraint firstAttribute="bottom" secondItem="SXW-kS-iZw" secondAttribute="bottom" constant="10" id="eT7-5Q-8gO"/>
@@ -231,6 +232,28 @@
                                             <outlet property="satMathLabel" destination="8pe-Af-7Xz" id="Zhb-sg-g8j"/>
                                             <outlet property="satMathWritingLabel" destination="9bB-C0-hLu" id="bg1-9n-bP3"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="188" id="rVZ-Z5-RO1">
+                                        <rect key="frame" x="0.0" y="324" width="355" height="188"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rVZ-Z5-RO1" id="TAt-jl-c9h">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="188"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-vg-2gh">
+                                                    <rect key="frame" x="0.0" y="41" width="355" height="147"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="yxQ-vg-2gh" firstAttribute="width" secondItem="TAt-jl-c9h" secondAttribute="width" id="08x-7v-cpB"/>
+                                                <constraint firstItem="yxQ-vg-2gh" firstAttribute="leading" secondItem="TAt-jl-c9h" secondAttribute="leading" id="EQv-c3-jYz"/>
+                                                <constraint firstItem="yxQ-vg-2gh" firstAttribute="top" secondItem="TAt-jl-c9h" secondAttribute="top" constant="41" id="Fug-B6-nGH"/>
+                                                <constraint firstAttribute="bottom" secondItem="yxQ-vg-2gh" secondAttribute="bottom" id="f2W-mZ-0fs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
