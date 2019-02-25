@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--High School View Controller-->
+        <!--NYC High Schools-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HighSchoolViewController" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="v6U-au-7kv"/>
+                    <navigationItem key="navigationItem" title="NYC High Schools" id="fy5-Sz-NJ4"/>
                     <connections>
                         <outlet property="highSchoolTableView" destination="deF-KX-7O5" id="v2v-Db-GcY"/>
                         <segue destination="JPi-fq-204" kind="show" identifier="SATScoreSeuge" id="0cM-5c-9Yy"/>
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Score View Controller-->
+        <!--Detail-->
         <scene sceneID="BF3-uX-40y">
             <objects>
                 <viewController id="JPi-fq-204" customClass="SATScoreViewController" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target" sceneMemberID="viewController">
@@ -233,7 +233,7 @@
                                             <outlet property="satMathWritingLabel" destination="9bB-C0-hLu" id="bg1-9n-bP3"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="188" id="rVZ-Z5-RO1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailTableViewCell" rowHeight="188" id="rVZ-Z5-RO1" customClass="DetailTableViewCell" customModule="_0190223_FranklinBoswell_NYCSchools" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="324" width="355" height="188"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rVZ-Z5-RO1" id="TAt-jl-c9h">
@@ -242,7 +242,21 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-vg-2gh">
                                                     <rect key="frame" x="0.0" y="41" width="355" height="147"/>
+                                                    <subviews>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poS-IB-3Vm">
+                                                            <rect key="frame" x="5" y="5" width="345" height="137"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <attributedString key="attributedText"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="poS-IB-3Vm" firstAttribute="top" secondItem="yxQ-vg-2gh" secondAttribute="top" constant="5" id="LRx-MG-rFq"/>
+                                                        <constraint firstAttribute="bottom" secondItem="poS-IB-3Vm" secondAttribute="bottom" constant="5" id="gcJ-yH-pGD"/>
+                                                        <constraint firstItem="poS-IB-3Vm" firstAttribute="leading" secondItem="yxQ-vg-2gh" secondAttribute="leading" constant="5" id="oN8-pa-Jio"/>
+                                                        <constraint firstAttribute="trailing" secondItem="poS-IB-3Vm" secondAttribute="trailing" constant="5" id="pI7-fz-0Gf"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -254,6 +268,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="detailTextView" destination="poS-IB-3Vm" id="dS2-yN-Pss"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -267,6 +284,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QDw-ST-OB3"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Detail" id="SkD-zB-Tww"/>
                     <connections>
                         <outlet property="satScoreTableView" destination="7yQ-0l-usW" id="NpW-Va-31R"/>
                     </connections>

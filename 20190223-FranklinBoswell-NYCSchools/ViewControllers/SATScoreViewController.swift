@@ -29,7 +29,7 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     
     }
     
@@ -39,6 +39,10 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SATScoreTableViewCell", for: indexPath) as! SATScoreTableViewCell
             cell.propagateData(nycSatScore: nycSATScore, schoolName: nycHighSchool.schoolName!)
+            return cell
+        }else if indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
+            cell.detailTextView.text = "Overview Summary \n\n" + nycHighSchool.overviewParagraph!
             return cell
         }
        return UITableViewCell()
