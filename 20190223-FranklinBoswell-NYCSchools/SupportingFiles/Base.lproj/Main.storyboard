@@ -44,10 +44,16 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfj-u9-fsd">
                                                             <rect key="frame" x="0.0" y="58" width="167.5" height="35"/>
                                                             <state key="normal" title="Call"/>
+                                                            <connections>
+                                                                <action selector="makeACallAction:" destination="KaG-uJ-4E7" eventType="touchUpInside" id="TmQ-4g-tby"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLR-M0-33y">
                                                             <rect key="frame" x="167.5" y="58" width="167.5" height="35"/>
                                                             <state key="normal" title="Email"/>
+                                                            <connections>
+                                                                <action selector="makeAnEmailAction:" destination="KaG-uJ-4E7" eventType="touchUpInside" id="uym-ZS-Eb0"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
