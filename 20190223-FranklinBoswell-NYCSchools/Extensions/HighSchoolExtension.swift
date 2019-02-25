@@ -9,6 +9,7 @@
 extension HighSchool {
     init?(json: [String: Any]) {
         
+        //With more time each of these could be gaurded and handeled individually rather than in a batch
         guard let dbn = json["dbn"] as? String,
             let schoolName = json["school_name"] as? String,
             let overviewParagraph = json["overview_paragraph"] as? String,

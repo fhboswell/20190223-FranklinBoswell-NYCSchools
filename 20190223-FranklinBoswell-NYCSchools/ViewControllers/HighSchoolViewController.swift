@@ -11,8 +11,12 @@ import UIKit
 class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
+    
+    // The two arrays of object from the respective endpoints
     var nycHighSchools = [HighSchool]()
     var nycSATScores = [SATScoreData]()
+    
+    
     var filteredHighSchools = [HighSchool]()
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -24,6 +28,8 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
     //MARK: - IBOutlets
     
     @IBOutlet weak var highSchoolTableView: UITableView!
+    
+    
     //MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +46,7 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
         getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
         getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
     }
-    
+    //Prepare for and pass the appropriate objects to the destination ViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var indexPath = sender as! IndexPath
         if segue.identifier == "SATScoreSeuge" {
@@ -63,11 +69,9 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
     
     //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if isFiltering() {
             return filteredHighSchools.count
         }
-        
         return nycHighSchools.count
     }
     
@@ -79,7 +83,7 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
         }else{
             nycHighSchoolFromAppropriateDataStore = nycHighSchools[indexPath.row]
         }
-        
+        //Given more time this could be moved to the cell
         cell.highSchoolTitleLabel.text = nycHighSchoolFromAppropriateDataStore.schoolName
         cell.delegate = self
         cell.email = nycHighSchoolFromAppropriateDataStore.schoolEmail
@@ -88,6 +92,7 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //given more time this could should be "automaticDimension"
         return 150
     }
     
@@ -96,6 +101,12 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     //MARK: - Data
+    
+    /// This method takes an API endpoint URL as a string and makes a request to get data
+    ///
+    /// - Parameters:
+    ///     - urlString: this is a string that is converted safley to a url and then a reqyest is made to it
+    ///     - processingClosure: this is the code that is run on the elements of the json that are recieved from the endpoint
     func getDataFromAPI(urlString: String, processingClosure: @escaping (_: [String: Any]) -> ()) {
         guard let dataEndpointUrl = URL(string: urlString) else {
             return
@@ -120,6 +131,11 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
         task.resume()
         
     }
+    
+    ///These methods take a piece of json, make an object out of it,
+    ///and add it to a property in this viewcontroller
+    ///
+    ///- Parameter: unit is a piece of a json that makes a single object
     func processSATScoreData(unit: [String: Any]){
         if let nycSATScore = SATScoreData(json: unit) {
             nycSATScores.append(nycSATScore)

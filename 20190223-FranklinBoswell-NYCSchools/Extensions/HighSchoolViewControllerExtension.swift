@@ -35,10 +35,14 @@ extension HighSchoolViewController: UISearchResultsUpdating {
 }
 
 extension HighSchoolViewController: MFMailComposeViewControllerDelegate, OutboundCommunication {
+    
+    //Calls makeACall which is an extension on string, this could be done in a better way with more time
     func makeCall(phoneNumber: String) {
         phoneNumber.makeACall()
     }
     
+    
+    /// Pulls up an email modal
     func makeEmail(emailAddress: String) {
         
         if !MFMailComposeViewController.canSendMail() {
@@ -52,17 +56,14 @@ extension HighSchoolViewController: MFMailComposeViewControllerDelegate, Outboun
         composeVC.setToRecipients([emailAddress])
         composeVC.setSubject("Message Subject")
         composeVC.setMessageBody("Message content.", isHTML: false)
-        
         // Present the view controller modally.
         self.present(composeVC, animated: true, completion: nil)
     }
     
+    //Required for sending mail
     func mailComposeController(_ controller: MFMailComposeViewController,
                                didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
 

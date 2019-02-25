@@ -10,8 +10,7 @@ import Foundation
 import UIKit
 
 class DetailTableViewCell: UITableViewCell {
-    
-    
+ 
     @IBOutlet weak var detailTextView: UITextView!
     
 }

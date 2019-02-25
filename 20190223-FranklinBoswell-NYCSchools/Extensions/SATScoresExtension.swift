@@ -10,6 +10,8 @@ import Foundation
 extension SATScoreData {
     init?(json: [String: Any]) {
         
+        
+        //With more time each of these could be gaurded and handeled individually rather than in a batch
         guard let dbn = json["dbn"] as? String,
             let numOfSatTestTakers = json["num_of_sat_test_takers"] as? String,
             let satCriticalReadingAvgScore = json["sat_critical_reading_avg_score"] as? String,
