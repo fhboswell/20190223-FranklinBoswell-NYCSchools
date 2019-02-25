@@ -12,11 +12,11 @@ import UIKit
 class SATScoreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     //MARK: - Properties
-    var nycHighSchool: HighSchool?
-    var nycSATScore: SATScoreData?
+    var nycHighSchool: HighSchool!
+    var nycSATScore: SATScoreData!
    
     //MARK: - IBOutlets
-    
+ 
     @IBOutlet weak var satScoreTableView: UITableView!
     
     
@@ -25,23 +25,26 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         print(nycHighSchool)
         print(nycSATScore)
+        satScoreTableView.delegate = self
+        satScoreTableView.dataSource = self
     }
     
     //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HighSchoolTableViewCell", for: indexPath) as! HighSchoolTableViewCell
        
-        return cell
+        guard nycHighSchool != nil && nycSATScore != nil else { return UITableViewCell() }
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SATScoreTableViewCell", for: indexPath) as! SATScoreTableViewCell
+            cell.propagateData(nycSatScore: nycSATScore, schoolName: nycHighSchool.schoolName!)
+            return cell
+        }
+       return UITableViewCell()
+        
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
-   
 }
 

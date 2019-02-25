@@ -54,6 +54,10 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             destinationVC.nycHighSchool = nycHighSchoolFromAppropriateDataStore
             destinationVC.nycSATScore = nycSATScores.first(where: { $0.dbn == nycHighSchoolFromAppropriateDataStore.dbn })
+            if destinationVC.nycSATScore == nil {
+                var noScoreFoundPlaceholder = SATScoreData()
+                destinationVC.nycSATScore = noScoreFoundPlaceholder
+            }
         }
     }
     

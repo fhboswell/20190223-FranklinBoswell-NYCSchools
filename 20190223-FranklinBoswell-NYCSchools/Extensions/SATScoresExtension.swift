@@ -26,4 +26,11 @@ extension SATScoreData {
 
         print(self)
     }
+    init?() {
+        self.dbn  = "No Data"
+        self.numOfSatTestTakers = "No Data"
+        self.satCriticalReadingAvgScore = "No Data"
+        self.satMathAvgScore = "No Data"
+        self.satWritingAvgScore = "No Data"
+    }
 }
