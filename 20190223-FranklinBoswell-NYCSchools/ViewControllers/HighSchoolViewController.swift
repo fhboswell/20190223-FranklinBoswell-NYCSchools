@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: - Properties
     var nycHighSchools = [HighSchool]()
@@ -22,8 +22,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     var satScoreDataURLString = "https://data.cityofnewyork.us/resource/f9bf-2cp4.json"
     
     //MARK: - IBOutlets
-    @IBOutlet weak var highSchoolTableview: UITableView!
     
+    @IBOutlet weak var highSchoolTableView: UITableView!
     //MARK: Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,31 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
-        highSchoolTableview.delegate = self
-        highSchoolTableview.dataSource = self
+        highSchoolTableView.delegate = self
+        highSchoolTableView.dataSource = self
         
         getDataFromAPI(urlString: highSchoolDataURLString, processingClosure: processHighSchoolData)
         getDataFromAPI(urlString: satScoreDataURLString, processingClosure: processSATScoreData)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var indexPath = sender as! IndexPath
+        if segue.identifier == "SATScoreSeuge" {
+            let destinationVC = segue.destination as! SATScoreViewController
+            
+            var nycHighSchoolFromAppropriateDataStore: HighSchool!
+            if isFiltering() {
+                nycHighSchoolFromAppropriateDataStore = filteredHighSchools[indexPath.row]
+            }else{
+                nycHighSchoolFromAppropriateDataStore = nycHighSchools[indexPath.row]
+            }
+            destinationVC.nycHighSchool = nycHighSchoolFromAppropriateDataStore
+            destinationVC.nycSATScore = nycSATScores.first(where: { $0.dbn == nycHighSchoolFromAppropriateDataStore.dbn })
+            if destinationVC.nycSATScore == nil {
+                var noScoreFoundPlaceholder = SATScoreData()
+                destinationVC.nycSATScore = noScoreFoundPlaceholder
+            }
+        }
     }
     
     //MARK: - Tableview
@@ -68,6 +88,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 150
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SATScoreSeuge", sender: indexPath)
+    }
+    
     //MARK: - Data
     func getDataFromAPI(urlString: String, processingClosure: @escaping (_: [String: Any]) -> ()) {
         guard let dataEndpointUrl = URL(string: urlString) else {
@@ -83,7 +107,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
                         processingClosure(jsonUnit)
                     }
                     DispatchQueue.main.async { [weak self] in
-                        self?.highSchoolTableview.reloadData()
+                        self?.highSchoolTableView.reloadData()
                     }
                 }
             } else {
