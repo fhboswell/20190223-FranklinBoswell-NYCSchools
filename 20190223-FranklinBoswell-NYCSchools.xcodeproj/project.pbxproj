@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		94124F5922233B310084526E /* SATScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F5822233B310084526E /* SATScoreViewController.swift */; };
 		94124F5B222378140084526E /* SATScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F5A222378140084526E /* SATScoreTableViewCell.swift */; };
+		94124F5F222396300084526E /* OutboundCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F5E222396300084526E /* OutboundCommunication.swift */; };
+		94124F612223977C0084526E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94124F602223977C0084526E /* StringExtension.swift */; };
 		9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79B2221CF78008E9C11 /* AppDelegate.swift */; };
 		9447E79E2221CF78008E9C11 /* HighSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E79D2221CF78008E9C11 /* HighSchoolViewController.swift */; };
 		9447E7A12221CF78008E9C11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E79F2221CF78008E9C11 /* Main.storyboard */; };
 		9447E7A32221CF79008E9C11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A22221CF79008E9C11 /* Assets.xcassets */; };
 		9447E7A62221CF79008E9C11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9447E7A42221CF79008E9C11 /* LaunchScreen.storyboard */; };
-		9447E7B12221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7B02221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift */; };
-		9447E7BC2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */; };
 		9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CC2221F090008E9C11 /* HighSchool.swift */; };
 		9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */; };
 		9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9447E7D122221374008E9C11 /* SATScoreData.swift */; };
@@ -44,6 +44,8 @@
 /* Begin PBXFileReference section */
 		94124F5822233B310084526E /* SATScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreViewController.swift; sourceTree = "<group>"; };
 		94124F5A222378140084526E /* SATScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreTableViewCell.swift; sourceTree = "<group>"; };
+		94124F5E222396300084526E /* OutboundCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutboundCommunication.swift; sourceTree = "<group>"; };
+		94124F602223977C0084526E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9447E7982221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9447E79B2221CF78008E9C11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9447E79D2221CF78008E9C11 /* HighSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolViewController.swift; sourceTree = "<group>"; };
@@ -52,11 +54,7 @@
 		9447E7A52221CF79008E9C11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9447E7A72221CF79008E9C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9447E7AC2221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchoolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9447E7B02221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0190223_FranklinBoswell_NYCSchoolsTests.swift; sourceTree = "<group>"; };
-		9447E7B22221CF79008E9C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9447E7B72221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20190223-FranklinBoswell-NYCSchoolsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _0190223_FranklinBoswell_NYCSchoolsUITests.swift; sourceTree = "<group>"; };
-		9447E7BD2221CF79008E9C11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9447E7CC2221F090008E9C11 /* HighSchool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchool.swift; sourceTree = "<group>"; };
 		9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighSchoolExtension.swift; sourceTree = "<group>"; };
 		9447E7D122221374008E9C11 /* SATScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SATScoreData.swift; sourceTree = "<group>"; };
@@ -90,12 +88,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94124F5D222396130084526E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				94124F5E222396300084526E /* OutboundCommunication.swift */,
+			);
+			name = Protocols;
+			path = CustomTableViewCells/Protocols;
+			sourceTree = "<group>";
+		};
 		9447E78F2221CF78008E9C11 = {
 			isa = PBXGroup;
 			children = (
 				9447E79A2221CF78008E9C11 /* 20190223-FranklinBoswell-NYCSchools */,
-				9447E7AF2221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsTests */,
-				9447E7BA2221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsUITests */,
 				9447E7992221CF78008E9C11 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9447E7A72221CF79008E9C11 /* Info.plist */,
+				94124F5D222396130084526E /* Protocols */,
 				9447E7D722224505008E9C11 /* CustomTableViewCells */,
 				9447E7CE2222001B008E9C11 /* Extensions */,
 				9447E7CB2221EFBA008E9C11 /* Models */,
@@ -121,24 +127,6 @@
 				9447E7C92221DD11008E9C11 /* SupportingFiles */,
 			);
 			path = "20190223-FranklinBoswell-NYCSchools";
-			sourceTree = "<group>";
-		};
-		9447E7AF2221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsTests */ = {
-			isa = PBXGroup;
-			children = (
-				9447E7B02221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift */,
-				9447E7B22221CF79008E9C11 /* Info.plist */,
-			);
-			path = "20190223-FranklinBoswell-NYCSchoolsTests";
-			sourceTree = "<group>";
-		};
-		9447E7BA2221CF79008E9C11 /* 20190223-FranklinBoswell-NYCSchoolsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9447E7BB2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift */,
-				9447E7BD2221CF79008E9C11 /* Info.plist */,
-			);
-			path = "20190223-FranklinBoswell-NYCSchoolsUITests";
 			sourceTree = "<group>";
 		};
 		9447E7C92221DD11008E9C11 /* SupportingFiles */ = {
@@ -175,6 +163,7 @@
 			children = (
 				9447E7CF22220035008E9C11 /* HighSchoolExtension.swift */,
 				9447E7D32222165B008E9C11 /* SATScoresExtension.swift */,
+				94124F602223977C0084526E /* StringExtension.swift */,
 				948F548022225964008C49F8 /* HighSchoolViewControllerExtension.swift */,
 			);
 			path = Extensions;
@@ -320,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94124F5F222396300084526E /* OutboundCommunication.swift in Sources */,
 				948F547F22224BF7008C49F8 /* HighSchoolTableViewCell.swift in Sources */,
 				9447E79E2221CF78008E9C11 /* HighSchoolViewController.swift in Sources */,
 				9447E7D022220035008E9C11 /* HighSchoolExtension.swift in Sources */,
@@ -327,6 +317,7 @@
 				9447E79C2221CF78008E9C11 /* AppDelegate.swift in Sources */,
 				948F548122225964008C49F8 /* HighSchoolViewControllerExtension.swift in Sources */,
 				9447E7D42222165B008E9C11 /* SATScoresExtension.swift in Sources */,
+				94124F612223977C0084526E /* StringExtension.swift in Sources */,
 				94124F5922233B310084526E /* SATScoreViewController.swift in Sources */,
 				9447E7D222221374008E9C11 /* SATScoreData.swift in Sources */,
 				9447E7CD2221F090008E9C11 /* HighSchool.swift in Sources */,
@@ -337,7 +328,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9447E7B12221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9447E7BC2221CF79008E9C11 /* _0190223_FranklinBoswell_NYCSchoolsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

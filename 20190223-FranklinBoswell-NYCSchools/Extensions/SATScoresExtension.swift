@@ -19,11 +19,19 @@ extension SATScoreData {
         }
         
         self.dbn  = dbn
-        self.numOfSatTestTakers = numOfSatTestTakers
-        self.satCriticalReadingAvgScore = satCriticalReadingAvgScore
-        self.satMathAvgScore = satMathAvgScore
-        self.satWritingAvgScore = satWritingAvgScore
+        if numOfSatTestTakers != "s" {
+            self.numOfSatTestTakers = numOfSatTestTakers
+            self.satCriticalReadingAvgScore = satCriticalReadingAvgScore
+            self.satMathAvgScore = satMathAvgScore
+            self.satWritingAvgScore = satWritingAvgScore
+        } else{
+            self.numOfSatTestTakers = "Less than 5"
+            self.satCriticalReadingAvgScore = "Supressed"
+            self.satMathAvgScore = "Supressed"
+            self.satWritingAvgScore = "Supressed"
+        }
 
+        
         print(self)
     }
     init?() {

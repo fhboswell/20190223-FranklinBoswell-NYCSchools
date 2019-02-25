@@ -81,6 +81,9 @@ class HighSchoolViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         cell.highSchoolTitleLabel.text = nycHighSchoolFromAppropriateDataStore.schoolName
+        cell.delegate = self
+        cell.email = nycHighSchoolFromAppropriateDataStore.schoolEmail
+        cell.phoneNumber = nycHighSchoolFromAppropriateDataStore.phoneNumber
         return cell
     }
     

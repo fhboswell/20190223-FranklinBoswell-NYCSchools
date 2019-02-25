@@ -5,9 +5,11 @@
 //  Created by Henry Boswell on 2/23/19.
 //  Copyright © 2019 Henry Boswell. All rights reserved.
 //
+//
 
 import Foundation
 import UIKit
+import MessageUI
 
 extension HighSchoolViewController: UISearchResultsUpdating {
     
@@ -31,3 +33,36 @@ extension HighSchoolViewController: UISearchResultsUpdating {
         return searchController.isActive && !searchBarIsEmpty()
     }
 }
+
+extension HighSchoolViewController: MFMailComposeViewControllerDelegate, OutboundCommunication {
+    func makeCall(phoneNumber: String) {
+        phoneNumber.makeACall()
+    }
+    
+    func makeEmail(emailAddress: String) {
+        
+        if !MFMailComposeViewController.canSendMail() {
+            print("Mail services are not available")
+            return
+        }
+        
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        
+        composeVC.setToRecipients([emailAddress])
+        composeVC.setSubject("Message Subject")
+        composeVC.setMessageBody("Message content.", isHTML: false)
+        
+        // Present the view controller modally.
+        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController,
+                               didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+}
+
