@@ -14,7 +14,7 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: - Properties
     var nycHighSchool: HighSchool!
     var nycSATScore: SATScoreData!
-   
+    lazy var infoForDetailCell = "Neighborhood: \n" + nycHighSchool.neighborhood! + "\n\nSchool Sports: \n" + nycHighSchool.schoolSports! + "\n\nWebsite: \n" + nycHighSchool.website! + "\n\nEmail: \n" + nycHighSchool.schoolEmail! +  "\n\nPhone Number\n" + nycHighSchool.phoneNumber!
     //MARK: - IBOutlets
  
     @IBOutlet weak var satScoreTableView: UITableView!
@@ -29,7 +29,7 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: - Tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     
     }
     
@@ -43,6 +43,10 @@ class SATScoreViewController: UIViewController, UITableViewDelegate, UITableView
         }else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
             cell.detailTextView.text = "Overview Summary \n\n" + nycHighSchool.overviewParagraph!
+            return cell
+        } else if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as! DetailTableViewCell
+            cell.detailTextView.text = infoForDetailCell
             return cell
         }
        return UITableViewCell()

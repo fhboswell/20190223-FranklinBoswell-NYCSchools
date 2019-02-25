@@ -241,10 +241,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yxQ-vg-2gh">
-                                                    <rect key="frame" x="0.0" y="41" width="355" height="147"/>
+                                                    <rect key="frame" x="0.0" y="10" width="355" height="178"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="poS-IB-3Vm">
-                                                            <rect key="frame" x="5" y="5" width="345" height="137"/>
+                                                            <rect key="frame" x="5" y="5" width="345" height="168"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <attributedString key="attributedText"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -263,7 +263,7 @@
                                             <constraints>
                                                 <constraint firstItem="yxQ-vg-2gh" firstAttribute="width" secondItem="TAt-jl-c9h" secondAttribute="width" id="08x-7v-cpB"/>
                                                 <constraint firstItem="yxQ-vg-2gh" firstAttribute="leading" secondItem="TAt-jl-c9h" secondAttribute="leading" id="EQv-c3-jYz"/>
-                                                <constraint firstItem="yxQ-vg-2gh" firstAttribute="top" secondItem="TAt-jl-c9h" secondAttribute="top" constant="41" id="Fug-B6-nGH"/>
+                                                <constraint firstItem="yxQ-vg-2gh" firstAttribute="top" secondItem="TAt-jl-c9h" secondAttribute="top" constant="10" id="Fug-B6-nGH"/>
                                                 <constraint firstAttribute="bottom" secondItem="yxQ-vg-2gh" secondAttribute="bottom" id="f2W-mZ-0fs"/>
                                             </constraints>
                                         </tableViewCellContentView>
